@@ -1,5 +1,11 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300"');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+@import url('https://fonts.googleapis.com/css?family=Rancho');
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:300|Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One|Roboto');
 
 // Variables
 @import 'variables';
@@ -7,7 +13,24 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Font-Awesome
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+// Vuetify
+@import '~vuetify/dist/vuetify.min.css';
+
 .navbar-laravel {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.v-text-field .v-input__prepend-inner {
+    margin-right: 15px !important;
+}
+
+.v-btn {
+    height: auto !important;
 }

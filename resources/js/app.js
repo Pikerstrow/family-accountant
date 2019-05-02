@@ -5,8 +5,29 @@
  */
 
 require('./bootstrap');
-
 window.Vue = require('vue');
+
+
+import User from './helpers/User.js';
+window.User = User;
+
+
+/*Vuetify*/
+import '@fortawesome/fontawesome-free/css/all.css';
+import Vuetify from 'vuetify';
+Vue.use(Vuetify, {
+    iconfont: 'fa',
+    theme: {
+        primary: '#2196f3',
+        secondary: '#00bcd4',
+        accent: '#009688',
+        error: '#cb3b30',
+        warning: '#ff9800',
+        info: '#03a9f4',
+        success: '#367138'
+    }
+});
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,7 +40,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('toolbar', require('./components/shared/Toolbar.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,6 +48,11 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import {router} from './router.js';
+import {store} from './store.js';
+
 const app = new Vue({
     el: '#app',
+    router,
+    store
 });

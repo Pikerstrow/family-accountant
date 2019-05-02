@@ -14,9 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('login', 'PassportController@login');
+Route::post('register', 'PassportController@register');
 
-Route::apiResource('/expense-items', 'ExpenseItemController');
-Route::apiResource('/expenses', 'ExpenseController');
+Route::middleware('auth:api')->group(function () {
+    Route::apiResource('/expense-items', 'ExpenseItemController');
+    Route::apiResource('/expenses', 'ExpenseController');
+});
+
+
 
 
 
